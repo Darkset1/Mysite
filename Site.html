@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Рандомные факты об автомобилях</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        #fact-container {
+            text-align: center;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        #fact {
+            font-size: 16px;
+            margin: 20px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div id="fact-container">
+        <h1>Рандомный факт об автомобилях</h1>
+        <p id="fact"></p>
+        <button onclick="getRandomFact()">Узнать факт</button>
+    </div>
+
+    <script>
+        const facts = [
+            "Первый автомобиль в мире, который достиг скорости 100 км/ч, был электромобиль.",
+            "Volkswagen Group владеет множеством известных брендов автомобилей, включая Audi, Bentley, Bugatti, Porsche, и Skoda.",
+            "Первый патент на автомобиль был выдан Карлу Бенцу в Германии в 1886 году.",
+            "Наибольшее количество автомобилей в мире приходится на Соединенные Штаты Америки - более 300 миллионов.",
+            "Самый продаваемый автомобиль в истории - Toyota Corolla. Было продано более 44 миллионов экземпляров.",
+            "Ferrari производит всего около 8000 автомобилей в год.",
+            "Самый дорогой серийный автомобиль в мире - Bugatti La Voiture Noire, стоимостью более 18 миллионов долларов.",
+            "В мире существует только один автомобиль на каждые 11 человек.",
+            "Первый автомобиль с кондиционером был представлен в 1939 году.",
+            "Самая быстрая машина в мире, Bugatti Chiron, может разгоняться до скорости 490.48 км/ч."
+        ];
+
+        function getRandomFact() {
+            const fact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('fact').textContent = fact;
+        }
+
+        // Показать начальный факт при загрузке
+        window.onload = getRandomFact;
+    </script>
+</body>
+</html>
